@@ -11,18 +11,18 @@ st.set_page_config(
 df = st.session_state["data"]
 
 tipos='Todos'
-tipos = np.append(tipos,df["Post type"].unique())
-tipo = st.sidebar.selectbox("Tipo de Post", tipos)
-st.sidebar.markdown("Desenvolvido por Prof. Tiago Marum [THM Estatística](https://thmestatistica.com)")
+tipos = np.append(tipos,df["Data"].unique())
+tipo = st.sidebar.selectbox("Data", tipos)
+st.sidebar.markdown("Desenvolvido por Vinicius P. Silva [LinkedIn](https://www.linkedin.com/in/-vini-silva/)")
 
 if tipo == 'Todos':
     df_filtered = df
 else:
-    df_filtered = df[(df["Post type"]==tipo)]
+    df_filtered = df[(df["Data"]==tipo)]
 
 #df_filtered
 st.dataframe(df_filtered,
              column_config={
-                 "Likes": st.column_config.ProgressColumn(
-                     "Likes", format="%f", min_value=0, max_value=int(df_filtered["Likes"].max()))
+                 "Data": st.column_config.ProgressColumn(
+                     "Data", format="%f", min_value=0, max_value=int(df_filtered["Data"].max()))
                  })
