@@ -26,49 +26,11 @@ st.title("Vinicius P. Silva")
 st.write("Bem-vindo ao meu portfólio! Aqui você encontra projetos de Data Science, Machine Learning e Estatística. Fique à vontade para explorar e entrar em contato para mais informações.")
 
 st.write("## Sobre 📖")
-st.write("Sou um jovem cursando engenharia de software, tenho interesse na área de tecnologia. Procuro meios de expandir meu conhecimento. Procuro crecer nesse setor e adquirir experiências e conhecimento para crescer tanto no mercado de trabalho, como quanto pessoa.")
+st.write("Sou um jovem cursando engenharia de software, tenho interesse na área de tecnologia. Procuro meios de expandir meu conhecimento. Procuro crecer nesse setor e adquirir experiências e conhecimento para crescer no mercado de trabalho e como quanto pessoa.")
 st.write("## Educação 📚")
 st.write("""
 #### Ensino Médio- Completo Jun. 2023
 Pan American Christian Academy
 #### Engenharia de Software - Cursando
 FIAP-Faculdade de Informática e Administração Paulista
-""")
-st.write("## Experiências 🎯")
-st.write("""
-#### Dublagem em inglês: 
-Gravadora Argila
-
----
-#### Child Care: 
-Pan American Christian Academy 
-
----
-#### Teacher assistant:
-Chapel School
-
----
-#### Sites e Web Development: 
-Freelance 
-
----
-#### Sonoplastia:
-PIBS
-
----
-""")
-
-st.write("## Projetos 🛠")
-st.write("""
----
-
-
----
-""")
-
-st.write("## Idiomas 🌎")
-st.write("""
-- Português(Nativo)
-- Inglês(Fluente)
-- Fraçes(Básico)
 """)
