@@ -142,9 +142,11 @@ elif pages == "Analise seus Dados":
                 ## Entendimentos sobre a Distribuição de Poisson  
                 Ao comparar a distribuição de *Poisson* com os dados da coluna *Valor_BK*, observa-se que não há um encaixe adequado. A distribuição de *Poisson* é utilizada para modelar a ocorrência de eventos discretos em um intervalo fixo de tempo ou espaço, assumindo que esses eventos ocorrem de forma independente e a uma taxa média constante.  
 
-                No entanto, os dados de *Valor_BK* apresentam uma variação significativa ao longo dos anos, o que sugere que a taxa de ocorrência não é constante. Além disso, oscilações nos valores podem indicar dependência entre períodos consecutivos, o que viola o pressuposto de independência da distribuição de *Poisson*.  
+                No entanto, os valores de *Valor_BK* representam variáveis financeiras que podem ser influenciadas por diversos fatores externos, como oscilações na economia global, variações cambiais, mudanças nas políticas comerciais e demanda internacional. Esses fatores criam flutuações imprevisíveis nos dados, dificultando o ajuste à distribuição de *Poisson*, que pressupõe estabilidade na taxa de ocorrência.  
 
-                Outro fator relevante é que a distribuição de *Poisson* assume que a média e a variância dos dados são aproximadamente iguais. Ao analisar os valores de *Valor_BK*, é possível observar que a variabilidade dos dados pode ser maior do que a média, o que sugere que a dispersão dos valores não segue o comportamento esperado para uma distribuição de *Poisson*.  
+                Além disso, a distribuição de *Poisson* assume que a média e a variância dos dados são aproximadamente iguais. No caso dos dados analisados, a variabilidade pode ser muito maior do que a média, indicando que os eventos subjacentes não seguem uma frequência fixa ao longo do tempo. O comportamento das exportações pode ser cíclico ou afetado por choques externos, violando o pressuposto de independência entre as observações.  
+
+                Dessa forma, os dados da coluna *Valor_BK* não apresentam características compatíveis com a distribuição de *Poisson*, pois estão sujeitos a variações externas que tornam a ocorrência dos eventos instável e imprevisível.  
 
                 """)
                 st.subheader(f"Estimativa de λ (Taxa média de Ocorrência): {lambda_est:.2f}")
