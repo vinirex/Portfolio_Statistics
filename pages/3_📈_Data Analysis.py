@@ -138,6 +138,15 @@ elif pages == "Analise seus Dados":
                 col2.write("Tabela de probabilidades:")
                 col2.write(df_poisson)
                 
+                st.write("""
+                ## Entendimentos sobre a Distribuição de Poisson  
+                Ao comparar a distribuição de *Poisson* com os dados da coluna *Valor_BK*, observa-se que não há um encaixe adequado. A distribuição de *Poisson* é utilizada para modelar a ocorrência de eventos discretos em um intervalo fixo de tempo ou espaço, assumindo que esses eventos ocorrem de forma independente e a uma taxa média constante.  
+
+                No entanto, os dados de *Valor_BK* apresentam uma variação significativa ao longo dos anos, o que sugere que a taxa de ocorrência não é constante. Além disso, oscilações nos valores podem indicar dependência entre períodos consecutivos, o que viola o pressuposto de independência da distribuição de *Poisson*.  
+
+                Outro fator relevante é que a distribuição de *Poisson* assume que a média e a variância dos dados são aproximadamente iguais. Ao analisar os valores de *Valor_BK*, é possível observar que a variabilidade dos dados pode ser maior do que a média, o que sugere que a dispersão dos valores não segue o comportamento esperado para uma distribuição de *Poisson*.  
+
+                """)
                 st.subheader(f"Estimativa de λ (Taxa média de Ocorrência): {lambda_est:.2f}")
                 prob_acum = st.toggle("Probabilidade Acumulada")
                 if prob_acum:
@@ -167,6 +176,8 @@ elif pages == "Analise seus Dados":
                 #st.selectbox("Escolha uma variável qualitativa",colunas_categoricas)
 
 
+
+
                 hist_data = [df[coluna_escolhida].dropna().tolist()]
                 group_labels=['distplot']
                 b_size = st.number_input("Largura de Classe - Histograma",min_value=0.1,value=10000.0)
@@ -184,6 +195,18 @@ elif pages == "Analise seus Dados":
                     # Criando um trace da curva normal
                     fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='Curva Normal', line=dict(color='red')))
                 
+                st.write("""
+                ## Entendimentos
+                Ao sobrepor a distribuição *Normal* com os dados da coluna *Valor_BK*, não há um encaixe perfeito. Isso indica que os dados podem não seguir uma perfeita distribuição normal, o que pode ser explicado por diversos fatores.
+
+                A variação dos dados pode ser influenciada por choques econômicos, mudanças nas políticas de exportação, flutuações cambiais e demanda internacional. Além disso, distribuições de dados financeiros costumam apresentar assimetrias, caudas longas ou a presença de valores extremos (*outliers*), o que pode distorcer o ajuste à curva normal.
+
+                Para entender melhor a distribuição dos dados, é necessário utilizar ferramentas estatísticas como histogramas, testes de normalidade (Shapiro-Wilk, Kolmogorov-Smirnov) e medidas de assimetria e curtose. Dependendo dos resultados, pode-se considerar outras distribuições mais apropriadas, como a log-normal ou exponencial, que frequentemente descrevem melhor dados financeiros e econômicos.
+
+                """)
+
+
+
                 st.plotly_chart(fig)
 
                 p = ggplot(df, aes(sample=coluna_escolhida)) + geom_qq(size=3,colour='red',alpha=0.7) + geom_qq_line()+theme_bw()+labs(x="Quantis Teóricos",y = "Quantis Amostrais", title="Gráfico QQPlot")
